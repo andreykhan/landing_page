@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="desciption" content="Landing Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="fav.ico" type="image">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    {% block titile %}
+        <title>Main page</title>
+    {% endblock titile %}
+</head>
+<body>
+    <body id="bg" style="background-image: url('{% static "img/background_2.jfif"%}')";>
+    <header>
+        {% include 'includes/header.html' %}
+    </header>
+    <main>
+        {% block content %}
+            You are on the main page. If you would like to get an offer, please click on offer in navigation
+        {% endblock content %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </main>
+    <footer>
+        {% include 'includes/footer.html' %}
+    </footer>
+</body>
+</html>

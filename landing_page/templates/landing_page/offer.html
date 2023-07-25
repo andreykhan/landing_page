@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block titile %}
+    <title>Offer</title>
+{% endblock titile %}
+{% block content %}
+    <div id='frm'>
+        <form method='post' ALIGN='center'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Send request">
+        </form>
+    </div>
+{% endblock content %}
