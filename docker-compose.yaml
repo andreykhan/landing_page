@@ -10,7 +10,7 @@ services:
 
   web:
     image: andreykhan/landing_page:latest
-    build: .
+    build: ./landing_page/
     restart: always
     volumes:
       - static_value:/app/static/
